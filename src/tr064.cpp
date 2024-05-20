@@ -625,6 +625,7 @@ String TR064::byte2hex(byte number){
 /**************************************************************************/
 bool TR064::xmlTakeParam(String (*params)[2], int nParam) {
     WiFiClient * stream = tr064ClientPtr;
+
     while(stream->connected()) {
         if(!http.connected()) {
             deb_println("[TR064][xmlTakeParam] http connection lost", DEBUG_INFO);
@@ -747,3 +748,4 @@ void TR064::deb_println(const String& message, int level) {
         }
     }
 }
+
